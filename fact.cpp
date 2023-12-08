@@ -1,29 +1,17 @@
-#include <bits/stdc++.h>
+#include<iostream.h>
 using namespace std;
-
-main ()
+long long iterativeFact(long long n)
+{ long long f=1;
+  for(long long i=1;i<=n;i++)
+        f*=i;
+  return f;
+}
+long long recursiveFact(long long n)
+{if(n==1)
+  return 1;
+ return n*recursiveFact(n-1);}
+main()
 {
-    int n , a=0 , d=0 ;
-    char j ;
-
-    cin >> n;
-    for ( int i=0 ; i < n ; i++)
-    {
-        cin >> j;
-        if ( j == " A ")
-        {
-            a++;
-        }
-        if ( j == " D ")
-        {
-            d++;
-        }
-    }
-    if ( a > d )
-        cout << " ANTON" << endl;
-    else if ( a < d)
-        cout << " DANIK" << endl;
-    else if ( a=d)
-        cout << " FRINDSHIP" << endl;
-
+	cout<<recursiveFact(5)<<endl;
+	cout<<iterativeFact(5)<<endl;
 }
